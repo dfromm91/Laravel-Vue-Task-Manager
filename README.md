@@ -1,112 +1,111 @@
-# Task Manager Fullstack Application
+# Task Management Application
 
-This is a fullstack Task Manager application built with a Laravel backend and a Vue.js frontend. The backend handles authentication, task management, and API endpoints, while the frontend provides a responsive user interface for managing tasks.
-
----
+This is a full-stack Task Management application built with Laravel (backend) and Vue.js (frontend). The application allows users to manage tasks with full CRUD functionality and includes authentication.
 
 ## Features
 
-- **Backend (Laravel):**
+- **Frontend**
+  - Display a list of tasks with their titles, descriptions, and completion status.
+  - Add new tasks via a form.
+  - Edit or delete existing tasks.
+  - Toggle task completion status.
+  - Responsive design for both desktop and mobile screens.
 
-  - Login, and logout with token-based authentication (Sanctum).
-  - CRUD operations for tasks.
-  - CSRF protection.
+- **Backend**
+  - RESTful API endpoints for managing tasks.
+  - SQLite database included with dummy data and a test user.
+  - Authentication (login and logout).
 
-- **Frontend (Vue.js):**
-  - Login and logout functionality.
-  - Responsive task list with sorting and filtering.
-  - Create, edit, and delete tasks.
-  - Pagination for tasks.
+## Getting Started
 
----
+### Prerequisites
 
-## Prerequisites
+Ensure you have the following installed on your machine:
 
-- **Backend:**
+- [PHP](https://www.php.net/) (>=8.0)
+- [Composer](https://getcomposer.org/)
+- [Node.js/npm](https://nodejs.org/) (>=16.0)
 
-  - PHP 8.1 or later
-  - Composer
-  - SQLite or another database supported by Laravel
+### Setup Instructions
 
-- **Frontend:**
-  - Node.js 14+ and npm/yarn
-
----
-
-## Installation Instructions
-
-### 1. Setting Up the Backend (Laravel)
-
-1. **Clone the repository**:
+1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/your-repo/task-manager-backend.git
+   git clone https://github.com/dfromm91/Laravel-Vue-Task-Manager.git
+   cd Laravel-Vue-Task-Manager
+   ```
+
+2. **Backend Setup**
+
+   Navigate to the backend folder:
+
+   ```bash
    cd task-manager-backend
    ```
 
-2. **Install dependencies**:
+   Install PHP dependencies:
 
    ```bash
    composer install
    ```
 
-3. **Set up the environment**:
-
-   - Copy `.env.example` to `.env`:
-     ```bash
-     cp .env.example .env
-     ```
-   - Update `.env` with your database and app configurations:
-     ```plaintext
-     DB_CONNECTION=sqlite
-     DB_DATABASE=/absolute/path/to/database.sqlite
-     ```
-
-4. **Generate the SQLite database file**:
+   Copy the environment configuration:
 
    ```bash
-   touch database/database.sqlite
+   cp env.txt .env
    ```
 
-5. **Generate the application key**:
+   Generate the application key:
 
    ```bash
    php artisan key:generate
    ```
 
-6. **Run migrations and seed the database**:
+   Start the Laravel development server:
 
-   ```bash
-   php artisan migrate --seed
-   ```
-
-7. **Serve the backend**:
    ```bash
    php artisan serve
    ```
-   - The backend will be accessible at `http://localhost:8000`.
 
----
+3. **Frontend Setup**
 
-### 2. Setting Up the Frontend (Vue.js)
-
-1. **Clone the repository**:
+   Open a new terminal window and navigate to the frontend folder:
 
    ```bash
-   git clone https://github.com/your-repo/task-manager-frontend.git
    cd task-manager-frontend
    ```
 
-2. **Install dependencies**:
+   Install JavaScript dependencies:
 
    ```bash
    npm install
    ```
 
-3. **Start the development server**:
-   ```bash
-   npm run dev
-   ```
-   - The frontend will be accessible at `http://localhost:5173`.
+   Start the Vue.js development server:
 
----
+   ```bash
+   npm run serve
+   ```
+
+4. **Access the Application**
+
+   Open your browser and navigate to:
+
+   ```
+   http://localhost:8080
+   ```
+
+   Use the included test user to log in:
+
+   - **Email:** `user@test.com`
+   - **Password:** `password`
+
+## Included Data
+
+The SQLite database included in the repository contains:
+- Dummy tasks to demonstrate CRUD functionality.
+- A test user account for authentication.
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
